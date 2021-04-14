@@ -31,32 +31,32 @@ class AddProduct extends Component {
     render() {
 console.log(this.props);
         return (
-            <div class="container center_div">
+            <div className="container center_div">
                 <h2>CreateNewProduct</h2>
                 <form>
-                    <div class="form-group col-md-4">
-                        <input type="text" class="form-control" id="name" placeholder="productName" name="name" onChange={(event) => this.changeHandler(event)} />
+                    <div className="form-group col-md-4">
+                        <input type="text" className="form-control" id="name" placeholder="productName" name="name" onChange={(event) => this.changeHandler(event)} />
                     </div><br />
-                    <div class="form-group col-md-4">
-                        <input type="number" class="form-control" id="price" placeholder="price" name="price" onChange={(event) => this.changeHandler(event)} />
+                    <div className="form-group col-md-4">
+                        <input type="number" className="form-control" id="price" placeholder="price" name="price" onChange={(event) => this.changeHandler(event)} />
                     </div><br />
-                    <div class="form-group col-md-4">
-                        <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" onChange={(event) => this.changeHandler(event)} />
+                    <div className="form-group col-md-4">
+                        <input type="number" className="form-control" id="quantity" placeholder="Quantity" name="quantity" onChange={(event) => this.changeHandler(event)} />
                     </div><br />
-                    <div class="form-group col-md-4">
-                        <input type="text" class="form-control" id="description" placeholder="Description" name="details" onChange={(event) => this.changeHandler(event)} />
+                    <div className="form-group col-md-4">
+                        <input type="text" className="form-control" id="description" placeholder="Description" name="details" onChange={(event) => this.changeHandler(event)} />
                     </div><br />
-                    <div class="form-group col-md-4">
-                        <input type="text" class="form-control" id="imageUrl" placeholder="imageUrl" name="img" onChange={(event) => this.changeHandler(event)} />
+                    <div className="form-group col-md-4">
+                        <input type="text" className="form-control" id="imageUrl" placeholder="imageUrl" name="img" onChange={(event) => this.changeHandler(event)} />
                     </div><br />
-                    <div class="form-group col-md-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck" />
-                            <label class="form-check-label" for="gridCheck">
+                    <div className="form-group col-md-4">
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" id="gridCheck" />
+                            <label className="form-check-label" htmlFor="gridCheck">
                                 Check me out </label>
                         </div>
                     </div>
-                  <button type="submit" class="btn btn-primary" onClick={this.productCreateHandler} ><Link to='/products'>Create</Link> </button>
+                  <button type="submit" className="btn btn-primary" onClick={this.productCreateHandler} ><Link to='/products'>Create</Link> </button>
 
                 </form>
             </div >

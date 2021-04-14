@@ -17,19 +17,19 @@ class Users extends Component {
         } else {
             return (
                 <div>
-                    (<div class="container">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="main-box clearfix">
-                          <div class="table-responsive">
-                            <table class="table user-list">
+                    (<div className="container">
+                    <div className="row">
+                      <div className="col-lg-12">
+                        <div className="main-box clearfix">
+                          <div className="table-responsive">
+                            <table className="table user-list">
                               <thead>
                                 <tr>
                                   <th>
                                     <span>User</span>
                                   </th>
             
-                                  <th class="text-center">
+                                  <th className="text-center">
                                     <span>Status</span>
                                   </th>
                                   <th>
@@ -47,29 +47,29 @@ class Users extends Component {
                                         alt=""
                                         style={{width:"50px", borderadius : "50%"}}
                                       />
-                                    <a class="user-link">
+                                    <a className="user-link">
                                       {item.name}
                                       </a><br/>
-                                    <span class="user-subhead">{item.role}</span>
+                                    <span className="user-subhead">{item.role}</span>
                                   </td>
             
-                                  <td class="text-center">
-                                    <span class="label label-default">Inactive</span>
+                                  <td className="text-center">
+                                    <span className="label label-default">Inactive</span>
                                   </td>
                                   <td>
                                     <a>{item.email}</a>
                                   </td>
                                   <td style={{width: "20%"}}>
-                                    <a class="table-link">
-                                      <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                    <a className="table-link">
+                                      <span className="fa-stack">
+                                        <i className="fa fa-square fa-stack-2x"></i>
+                                        <i className="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                       </span>
                                     </a>
-                                    <a class="table-link danger">
-                                      <span class="fa-stack">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                    <a className="table-link danger">
+                                      <span className="fa-stack">
+                                        <i className="fa fa-square fa-stack-2x"></i>
+                                        <i className="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                       </span>
                                     </a>
                                   </td>
