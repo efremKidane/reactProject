@@ -17,7 +17,7 @@ class AddProduct extends Component {
             userId: new ObjectID(this.props.userId)
         }
     }
-
+    
     changeHandler = (event) => {
         const newProduct = { ...this.state.newProduct };
         newProduct[event.target.name] = event.target.value

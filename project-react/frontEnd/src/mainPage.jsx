@@ -8,6 +8,7 @@ import SignUp from './components/signUpForm';
 import Products from './components/products'
 import AddProduct from './components/createProduct';
 import Users from './components/listAllUsers';
+import Auth from './components/notAuthorized'
 const jwtManager = require('./jwtManager/jwt');
 
 
@@ -107,11 +108,14 @@ export default class MainPage extends React.Component {
                     <NavBar />
                     <Switch>
                         <Route path='/Home' exact component={Home} />
-                        <Route path='/products' exact component={()=><Products/>} />
+                        <Route path='/products' exact component={()=><Products
+                        id = {this.state.userId}
+                        />} />
                         <Route path='/createNewProduct' component={()=><AddProduct
                         userId= {this.state.userId}
                         />} />
                         <Route path='/users' exact component={()=><Users role= {this.state.role}/>}/>
+                        <Route path='/unAuthorized' component={Auth}/>
                         <Route path='/pageNotFound' exact component={PageNotFound} />
                         <Redirect from='/' to='/Home' />
                         <Redirect to='/pageNotFound' />

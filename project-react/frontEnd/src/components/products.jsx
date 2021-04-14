@@ -1,7 +1,7 @@
 import Product from './product';
 import React from 'react';
 import axios from 'axios'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 // import BookDetail from './BookDetail';
 import { connect } from 'react-redux';
 
@@ -14,7 +14,6 @@ class Products extends React.Component {
     }
 
     shouldComponentUpdate(nextProps){
-        console.log(nextProps.allProducts);
        if(this.props.allProducts === nextProps.allProducts){
            return false;
        }
@@ -25,7 +24,10 @@ class Products extends React.Component {
         //   this.props.onGetProducts();
     }
 
-    deleteProductHandler = (id) => {
+    deleteProductHandler = (id, userId) => {
+        if(this.props.id !== userId){
+         alert('not authorized to delete')
+        }else
         this.props.onDelteProduct(id);
     }
 
@@ -43,7 +45,7 @@ class Products extends React.Component {
                     return <Product
                         key={item._id}
                         product={item}
-                        onDelete={() => this.deleteProductHandler(item._id)}
+                        onDelete={() => this.deleteProductHandler(item._id, item.userId)}
                     />
 
                 })}
