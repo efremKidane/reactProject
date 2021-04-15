@@ -20,15 +20,20 @@ class Products extends React.Component {
        return true;
     }
 
-   componentDidUpdate (preProps) {
-        //   this.props.onGetProducts();
+   componentDidUpdate (prevProps, prevState) {
+    // if(prevState.allProducts !== this.props.allProducts) {
+    //     this.props.onGetProducts();
+    // }
     }
 
     deleteProductHandler = (id, userId) => {
         if(this.props.id !== userId){
          alert('not authorized to delete')
-        }else
-        this.props.onDelteProduct(id);
+        }else{
+            this.props.onGetProducts();
+            this.props.onDelteProduct(id);
+        }
+       
     }
 
 

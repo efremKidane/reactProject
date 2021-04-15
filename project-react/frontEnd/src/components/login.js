@@ -8,7 +8,7 @@ export default function Login(props) {
     }
     return (
         <div className="container">
-            <br />  <p className="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+            <br />  <p className="text-center"><h2> our ProductApp</h2> </p>
             <hr />
 
             <div className="row">
