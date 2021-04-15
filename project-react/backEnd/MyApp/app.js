@@ -5,6 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const swaggerUi = require('swagger-ui-express');
+require('dotenv').config();
 
 const MongoClient = require('mongodb').MongoClient;
 
@@ -71,6 +72,6 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-app.listen(2000,()=>{
+app.listen(process.env.PORT || 2000,()=>{
   console.log('listen in port 2000');
 });

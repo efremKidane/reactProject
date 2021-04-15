@@ -75,6 +75,10 @@ export default class MainPage extends React.Component {
                 }
             });
     }
+
+    logOutHandler= ()=>{
+        this.setState({isAuthenticated: false})
+    }
     
    
 
@@ -105,7 +109,9 @@ export default class MainPage extends React.Component {
 
             if (this.state.isUserLoggedIn) {
                 return (<Fragment>
-                    <NavBar />
+                    <NavBar 
+                    onLogOut={this.logOutHandler}
+                    />
                     <Switch>
                         <Route path='/Home' exact component={Home} />
                         <Route path='/products' exact component={()=><Products

@@ -40,7 +40,7 @@ class Users extends Component {
                               </thead>
                               <tbody>
                               {this.props.allUsers.map(item =>{
-                             return <tr>
+                             return <tr key={item._id}>
                                   <td>
                                     <img
                                         src="https://image.shutterstock.com/image-vector/user-icon-260nw-523867123.jpg"

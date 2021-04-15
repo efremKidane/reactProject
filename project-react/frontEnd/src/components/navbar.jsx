@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 class NavBar extends Component {
-    state = {}
+     submitHandler= (e)=>{
+        e.preventDefault();
+      }
     render() {
 
-        return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md" >
-            <Link className="navbar-brand" to="/">
+        return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-sm" >
+            <Link className="navbar-brand" to="/Home">
                 OurProductApp
         </Link>
             <button
@@ -34,9 +36,9 @@ class NavBar extends Component {
 
                 </div>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form className="form-inline my-2 my-lg-0">
+                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <Link to='/'><button className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.onLogOut} type="submit">Log 0ut</button></Link>  
             </form>
         </nav>);
     }
