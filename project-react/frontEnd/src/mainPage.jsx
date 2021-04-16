@@ -56,7 +56,7 @@ export default class MainPage extends React.Component {
 
     loginEventHandler = () => {
 
-        axios.post('http://localhost:2000/auth/login', this.state.loginUser)
+        axios.post('/api/auth/login', this.state.loginUser)
             .then(response => {
                 if (response.data.status === 'success') {
                     localStorage.setItem('token', response.data.result);
@@ -67,7 +67,7 @@ export default class MainPage extends React.Component {
     }
 
     signInHandler = () => {
-        axios.post('http://localhost:2000/auth/signup', this.state.sighnUp)
+        axios.post('/api/auth/signup', this.state.sighnUp)
             .then(response => {
                 if (response.data.status === 'success') {
 
