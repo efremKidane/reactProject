@@ -18,7 +18,7 @@ const getProducts = (data) => {
 /**--action--GET ALL PRODUCTS */
 export const getProductsAsync = () => {
     return function (dispatch) {
-        axios.get('/api/products')
+        axios.get('https://murmuring-peak-87526.herokuapp.com/products')
             .then(response => {
                 dispatch(getProducts(response.data.data))
             });
@@ -34,7 +34,7 @@ const updateProductByID = (id) => {
 /** -- UPDATE PRODUCT BY ID -- */
 export const updateProductsAsync = (id) => {
     return function (dispatch) {
-        axios.put('/api/products/' + id)
+        axios.put('http://localhost:2000/products/' + id)
             .then(response => {
                 dispatch(updateProductByID(response.data.result))
             });
@@ -50,7 +50,7 @@ const onAddProduct = (data) => {
 
 export const addProductAsync = (data) => {
     return function (dispatch) {
-        axios.post('/api/products', data)
+        axios.post('http://localhost:2000/products', data)
             .then(response => {
                 dispatch(onAddProduct(response.data.result))
             });
@@ -65,7 +65,7 @@ const onDeleteProduct = (data) => {
 
 export const deletProductAsync = (id) => {
     return function (dispatch) {
-        axios.delete('/api/products/' + id)
+        axios.delete('http://localhost:2000/products/' + id)
             .then(response => { 
                 console.log();
                 dispatch(onDeleteProduct(response.data.data))
@@ -83,7 +83,7 @@ const getUsers = (data) => {
 /**--action--GET ALL USERS */
 export const getUsersAsync = () => {
     return function (dispatch) {
-        axios.get('api/users')
+        axios.get('http://localhost:2000/users')
             .then(response => {
                 dispatch(getUsers(response.data.data))
             });

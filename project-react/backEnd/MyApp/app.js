@@ -25,11 +25,6 @@ const authMiddleware = require('./middlewares/authorization');
 
 var app = express();
 
-const whiteList = ['http://localhost/3000', 'http://localhost/2000', 'https://shrouded-journey-38552.herokuapp.com'];
-const corsOption = {
-  
-}
-
 app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -78,13 +73,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-if (process.env.NODE_ENV !== 'production') {
-  app.use(express.static(path.join(__dirname, 'fronEnd/build')));
-
-  app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'frontEnd', 'index.html'));
-  });
-}
 
 app.listen(process.env.PORT || 2000,()=>{
   console.log('listen in port 2000');
