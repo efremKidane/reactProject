@@ -6,8 +6,6 @@ export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const USERS = 'USERS';
 
-let url = "http://localhost:2000/products";
-
 /**--Action Creator-- */
 const getProducts = (data) => {
     return {
@@ -18,7 +16,7 @@ const getProducts = (data) => {
 /**--action--GET ALL PRODUCTS */
 export const getProductsAsync = () => {
     return function (dispatch) {
-        axios.get('https://murmuring-peak-87526.herokuapp.com/products')
+        axios.get('http://localhost:2000/products')
             .then(response => {
                 dispatch(getProducts(response.data.data))
             });
